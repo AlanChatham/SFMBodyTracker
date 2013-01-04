@@ -354,6 +354,7 @@ namespace Microsoft.Samples.Kinect.SkeletonBasics
                 {
                     // Let's store the data from skeleton 0 into our data object...
                     if (skeletons[0].TrackingState == SkeletonTrackingState.Tracked &&
+                        skeletons[0].ClippedEdges.HasFlag(FrameEdges.None) &&
                         isRecording == true)
                     {
                         storeSkeletonData(skeletons[0]);
